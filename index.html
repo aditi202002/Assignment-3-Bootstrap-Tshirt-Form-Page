@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>T-shirt Form</title>
+</head>
+<body>
+    <script src="https://kit.fontawesome.com/14f5cf4f5a.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
+    <div>
+        <h1 class="display-6 text-center">Customized T-shirts Order</h1>
+        <form class="container rounded-3 bg-white text-dark mx-auto m-5 row g-3">
+            
+                <div class="col-md-7">
+                    <label for="fullname" class="form-label">Full Name:</label>
+                    <input  type="text" class="form-control" id="fullname" name="fullname" required>
+                </div>
+                <br>
+            <div class="col-md-7">
+                <label for="email" class="form-label">Email-id</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3 col-md-6">
+                <label for="date" class="form-label">Delivery Date</label>
+                <input type="date" class="form-control" id="datemin" name="datemin" min="2021-07-29"  required>
+                <button type="button" class="mt-2 btn btn-sm btn-info" id="liveToastBtn">Info</button>
+            </div>
+            <div class="mb-3 col-md-5">
+                <label for="quantity" class="form-label">Quantity</label>
+                <input type="number" class="form-control" id="quantity" name="quantity" min="1"  required>
+            </div>
+            <div class="mb-3 col-md-5">
+                <label for="tagline" class="form-label">Tagline</label>
+                <input type="text" class="form-control" id="tagline" name="tagline"  required>
+            </div>
+            <div class="mb-3 col-md-5">
+                <label for="color" class="form-label">Choose color</label>
+                <input type="color" class="form-control" id="favcolor" name="favcolor" value="#000000">
+            </div>
+            <div class="mb-3 col-md-5">
+                <label for="size" class="form-label">Choose your Size:</label>
+                <select class="form-control" name="cars" id="cars"  required>
+                    <option value="extra small">XS</option>
+                    <option value="small">S</option>
+                    <option value="Medium">M</option>
+                    <option value="Large">L</option>
+                    <option value="extra large">XL</option>
+                    <option value="extra extra large">XXL</option>
+                </select>
+            </div>
+            <div class="col-md-5">
+                <label for="inputCity" class="form-label">City</label>
+                <input type="text" class="form-control" id="inputCity">
+              </div>
+              <div class="col-md-4">
+                <label for="inputState" class="form-label">State</label>
+                <select id="inputState" class="form-select">
+                  <option selected>Choose...</option>
+                  <option>Maharashtra</option>
+                  <option>Goa</option>
+                  <option>UttarPradesh</option>
+                  <option>Punjab</option>
+                  <option>Tamilnadu</option>
+                </select>
+              </div>
+              <div class="col-md-2">
+                <label for="inputZip" class="form-label">Zip</label>
+                <input type="text" class="form-control" id="inputZip">
+              </div>
+            <button type="submit" class="mb-3 col-md-8 btn btn-primary">Submit</button>
+          </form>
+    </div>
+    <div class="position-fixed top-0 end-0 p-3" style="z-index: 11">
+        <div id="liveToast" class="toast bg-info" role="alert" aria-live="assertive" aria-atomic="true">
+          <div class="toast-header">
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+          </div>
+          <div class="toast-body">
+            Please enter a valid message
+          </div>
+        </div>
+    </div>
+    
+</body>
+</html>
+<script>
+    var toastTrigger = document.getElementById('liveToastBtn')
+    var toastLiveExample = document.getElementById('liveToast')
+    if (toastTrigger) {
+    toastTrigger.addEventListener('click', function () {
+        var toast = new bootstrap.Toast(toastLiveExample)
+
+        toast.show()
+    })
+    }
+</script>
